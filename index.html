@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency Website Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="images/png" href="images/logo.ico">
+</head>
+  <body>
+    <header>
+        <a href="#" class="brand"><img src="images/logo.png" alt=""></a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallery</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="videos/1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videos/2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videos/3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videos/4.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="videos/5.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Relax.<br/><span>Maldives</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, porro? Expedita possimus sit doloribus laboriosam excepturi nisi aut exercitationem natus inventore enim obcaecati repellat placeat, reprehenderit sapiente facere vero. Facilis!</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Venture out.<br/><span>Whistler, Canada</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, porro? Expedita possimus sit doloribus laboriosam excepturi nisi aut exercitationem natus inventore enim obcaecati repellat placeat, reprehenderit sapiente facere vero. Facilis!</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Wonderful.<br/><span>Leeward Islands, French Polynesia</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, porro? Expedita possimus sit doloribus laboriosam excepturi nisi aut exercitationem natus inventore enim obcaecati repellat placeat, reprehenderit sapiente facere vero. Facilis!</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Get inspired.<br/><span>Bristol, England</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, porro? Expedita possimus sit doloribus laboriosam excepturi nisi aut exercitationem natus inventore enim obcaecati repellat placeat, reprehenderit sapiente facere vero. Facilis!</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>One top of the world.<br/><span>Solukhumbu, Nepal</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, porro? Expedita possimus sit doloribus laboriosam excepturi nisi aut exercitationem natus inventore enim obcaecati repellat placeat, reprehenderit sapiente facere vero. Facilis!</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="media-icons">
+            <a href="#"><img src="images/fb.png" alt=""></a>
+            <a href="#"><img src="images/tw.png" alt=""></a>
+            <a href="#"><img src="images/ig.png" alt=""></a>
+        </div>
+        <div class="slider-navigation">
+           <div class="nav-btn active"></div>
+           <div class="nav-btn"></div>
+           <div class="nav-btn"></div>
+           <div class="nav-btn"></div>
+           <div class="nav-btn"></div> 
+        </div>
+
+    </section>
+
+    <script type="text/javascript">
+      const menuBtn = document.querySelector(".menu-btn");
+      const navigation = document.querySelector(".navigation");
+  
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      });
+  
+      const btns = document.querySelectorAll(".nav-btn");
+      const slides = document.querySelectorAll(".video-slide");
+      const contents = document.querySelectorAll(".content");
+  
+      var sliderNav = function(manual){
+        btns.forEach((btn) => {
+          btn.classList.remove("active");
+        });
+  
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+          content.classList.remove("active");
+        });
+  
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      }
+  
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          sliderNav(i);
+        });
+      });
+      </script>
+    
+  </body>
+</html>
